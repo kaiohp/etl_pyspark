@@ -1,0 +1,34 @@
+[project]
+name = "etl-pyspark"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pyspark>=3.5.3",
+]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+    "jupyterlab>=4.3.1",
+    "pre-commit>=4.0.1",
+    "pytest-cov>=6.0.0",
+    "pytest>=8.3.3",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 79
+
+[tool.ruff.lint]
+# (I)-> iSort, (F)->PyFlakes, (E,W)-> PyCodeStyle,(PL)->Pylint, (PT)->Pytest-style
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402"]
+"test_*.py" = ["E501"]
+"conftest.py" = ["E501"]
+
+[tool.ruff.format]
+quote-style = 'single'
